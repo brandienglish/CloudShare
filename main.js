@@ -1,52 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To ShareCloud</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.999.0.min.js"></script>
-    <script src="main.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div id="login">
-            <h2>Welcome to ShareCloud</h2>
-            <form id="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="user" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-        
-        <div id="fileShare" style="display: none;">
-            <h2>Share File</h2>
-            <form id="fileForm">
-                <input type="file" id="file" name="file" required>
-                <div id="emailSection">
-                    <label for="email1">Email 1:</label>
-                    <input type="email" id="email1" name="email" required>
-                    <label for="email2">Email 2:</label>
-                    <input type="email" id="email2" name="email">
-                    <label for="email3">Email 3:</label>
-                    <input type="email" id="email3" name="email">
-                    <label for="email4">Email 4:</label>
-                    <input type="email" id="email4" name="email">
-                    <label for="email5">Email 5:</label>
-                    <input type="email" id="email5" name="email">
-                </div>
-                <button type="submit">Upload</button>
-            </form>
-            <div id="fileList"></div>
-        </div>
-    </div>
-</body>
-</html>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const fileForm = document.getElementById('fileForm');
     const fileShare = document.getElementById('fileShare');
@@ -166,15 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-     
+    // Securely send email (replace with actual API for sending email)
     function sendFile(fileUrl, fileName, emails) {
-         
+        // Call backend API to send email securely
         console.log('Sending email to: ', emails);
         // Simulated successful email send
         alert(`Email sent to: ${emails.join(', ')}`);
     }
 
-   
+    // Store file info in database securely (replace with your database logic)
     function storeFileInfo(fileUrl, fileName, emails) {
         console.log('Storing file info in database');
         // Simulated successful database store
